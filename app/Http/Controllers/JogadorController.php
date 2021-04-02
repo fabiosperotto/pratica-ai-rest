@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipamento;
 use App\Models\Jogador;
 use Illuminate\Http\Request;
 
@@ -54,11 +55,7 @@ class JogadorController extends Controller
         if($jogador->save()) return response()->json($jogador, 200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *     
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id = null)
     {
         if($id == null) return response()->json(['error' => 'id na URL é obrigatória'], 400);
@@ -81,5 +78,20 @@ class JogadorController extends Controller
             $data[] = $equipamento;
         }
         return response()->json($data, 200);
+    }
+
+
+    public function equipamentoPost(Request $request, $id = null)
+    {
+        if($id == null) return response()->json(['error' => 'id na URL é obrigatória'], 400);
+        if(!$request->isJson()) return response()->json(['error' => 'os dados devem ser enviados no formato JSON'], 415);
+        if(!$request->json()->has('descricao') || !$request->json()->has('bonus_ataque') || !$request->json()->has('bonus_defesa')){
+            return response()->json(['error' => 'campos obrigatórios não submetidos'], 400);
+        }
+        $jogador = Jogador::find($id);
+        $dados = $request->json()->all();
+        $dados['id_jogador'] = $jogador->id;
+        $equipamento = Equipamento::create($dados);
+        return response()->json($equipamento, 201);
     }
 }

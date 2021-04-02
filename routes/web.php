@@ -22,4 +22,6 @@ $router->get('/jogador/{id}', ['as' => 'jogador.get', 'uses' => 'JogadorControll
 $router->post('/jogador', ['as' => 'jogador.post', 'uses' => 'JogadorController@store']);
 $router->put('/jogador[/{id}]', ['as' => 'jogador.put', 'uses' => 'JogadorController@update']);
 $router->delete('/jogador[/{id}]', ['as' => 'jogador.delete', 'uses' => 'JogadorController@destroy']);
+
 $router->get('/jogador/{id}/equipamento', ['as' => 'jogador.equipamento', 'uses' => 'JogadorController@equipamento']);
+$router->post('/jogador/{id}/equipamento', ['as' => 'jogador.equipamento', 'uses' => 'JogadorController@equipamentoPost']);

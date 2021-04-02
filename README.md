@@ -1,6 +1,6 @@
 # Game-API Pack - Lumen
 
-Pacote de Desenvolvimento para a Disciplina de PPI2, utilizando PHP + microframework Lumen. O Objetivo é servir de exemplo para a elaboração de um webservice para comuncar dados em JSON a respeito de uma modelagem.
+Pacote de Desenvolvimento para a Disciplina de PPI2, utilizando PHP + microframework Lumen. O Objetivo é servir de exemplo para a elaboração de um webservice para comunicar dados em JSON a respeito de uma modelagem.
 
 ## Modelagem de Referência 
 

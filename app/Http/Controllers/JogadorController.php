@@ -23,7 +23,7 @@ class JogadorController extends Controller
         if(!$request->json()->has('nome')) return response()->json(['error' => 'nome é obrigatório'], 400);
         
         $jogador = Jogador::create($request->json()->all());
-        return response()->json($jogador, 200);
+        return response()->json($jogador, 201);
     }
 
     public function one($id = null)

@@ -7,25 +7,6 @@ use Illuminate\Http\Request;
 
 class JogadorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -45,26 +26,12 @@ class JogadorController extends Controller
         return response()->json($jogador, 200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Jogador  $jogador
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Jogador $jogador)
+    public function one($id = null)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Jogador  $jogador
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Jogador $jogador)
-    {
-        //
+        if($id == null) return response()->json(['error' => 'id na URL é obrigatória'], 400);
+        $jogador = Jogador::find($id);
+        if($jogador == null) return response()->json(['error' => 'entidade não encontrada'], 404);        
+        return response()->json($jogador, 200);
     }
 
     /**
@@ -74,24 +41,45 @@ class JogadorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id = null)
-    {
-        dd($id);
+    {        
+        if($id == null) return response()->json(['error' => 'id na URL é obrigatória'], 400);
+        $jogador = Jogador::find($id);
+        if($jogador == null) return response()->json(['error' => 'entidade não encontrada'], 404);
+        
+        $dados = $request->json()->all();
+        if($request->json()->has('nome')) $jogador->nome = $dados['nome'];
+        if($request->json()->has('ataque')) $jogador->ataque = $dados['ataque'];
+        if($request->json()->has('defesa')) $jogador->defesa = $dados['defesa'];
+        if($request->json()->has('pontos_vida')) $jogador->pontos_vida = $dados['pontos_vida'];
+        if($jogador->save()) return response()->json($jogador, 200);
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Jogador  $jogador
+     *     
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jogador $jogador)
+    public function destroy($id = null)
     {
-        //
+        if($id == null) return response()->json(['error' => 'id na URL é obrigatória'], 400);
+        $jogador = Jogador::find($id);
+        if($jogador->delete()) return response()->json(['OK'], 200);
     }
 
     public function all()
     {
         $jogadores = Jogador::all();
         return response()->json($jogadores, 200);
+    }
+
+    public function equipamento($id = null)
+    {
+        if($id == null) return response()->json(['error' => 'id na URL é obrigatória'], 400);
+        $jogador = Jogador::find($id);
+        $data = [];        
+        foreach($jogador->equipamentos as $equipamento){
+            $data[] = $equipamento;
+        }
+        return response()->json($data, 200);
     }
 }

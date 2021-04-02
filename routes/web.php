@@ -17,6 +17,9 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/jogador', ['as' => 'jogadores.all', 'uses' => 'JogadorController@all']);
-$router->post('/jogador', ['as' => 'jogadores.post', 'uses' => 'JogadorController@store']);
-$router->put('/jogador[/{id}]', ['as' => 'jogadores.put', 'uses' => 'JogadorController@update']);
+$router->get('/jogador', ['as' => 'jogador.all', 'uses' => 'JogadorController@all']);
+$router->get('/jogador/{id}', ['as' => 'jogador.get', 'uses' => 'JogadorController@one']);
+$router->post('/jogador', ['as' => 'jogador.post', 'uses' => 'JogadorController@store']);
+$router->put('/jogador[/{id}]', ['as' => 'jogador.put', 'uses' => 'JogadorController@update']);
+$router->delete('/jogador[/{id}]', ['as' => 'jogador.delete', 'uses' => 'JogadorController@destroy']);
+$router->get('/jogador/{id}/equipamento', ['as' => 'jogador.equipamento', 'uses' => 'JogadorController@equipamento']);

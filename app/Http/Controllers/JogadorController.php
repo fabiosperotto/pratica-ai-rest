@@ -55,7 +55,6 @@ class JogadorController extends Controller
         if($jogador->save()) return response()->json($jogador, 200);
     }
 
-
     public function destroy($id = null)
     {
         if($id == null) return response()->json(['error' => 'id na URL é obrigatória'], 400);
@@ -69,18 +68,19 @@ class JogadorController extends Controller
         return response()->json($jogadores, 200);
     }
 
+
     public function equipamento($id = null)
     {
         if($id == null) return response()->json(['error' => 'id na URL é obrigatória'], 400);
         $jogador = Jogador::find($id);
-        $data = [];        
+        $dados = [];        
         foreach($jogador->equipamentos as $equipamento){
-            $data[] = $equipamento;
+            $dados[] = $equipamento;
         }
-        return response()->json($data, 200);
+        return response()->json($dados, 200);
     }
 
-
+ 
     public function equipamentoPost(Request $request, $id = null)
     {
         if($id == null) return response()->json(['error' => 'id na URL é obrigatória'], 400);

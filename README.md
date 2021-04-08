@@ -26,10 +26,11 @@ Este projeto faz referência a uma modelagem extremamente simplificada da intera
 ```console
 dev@pc:~$ php composer.phar install #se usar executável do composer
 ou
-dev@pc:~$ php composer install #se possuir instalado o composer
+dev@pc:~$ composer install #se possuir instalado o composer
 ```
-3. Gerar chave da aplicação:
+3. Copiar o .env.example para .env (arquivo de configuração) e gerar chave da aplicação:
 ```console
+dev@pc:~$ cp .env.example .env
 dev@pc:~$ php artisan key:generate
 ```
 4. Verificar se no arquivo bootstrap/app.php:

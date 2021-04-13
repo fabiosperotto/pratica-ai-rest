@@ -1,6 +1,6 @@
 # Game-API Pack - Lumen
 
-Pacote de Desenvolvimento para a Disciplina de PPI2, utilizando PHP + microframework Lumen. O Objetivo é servir de exemplo para a elaboração de um webservice para comunicar dados em JSON a respeito de uma modelagem.
+Pacote de Desenvolvimento para a Disciplina de PPI2, utilizando PHP + microframework Lumen. O Objetivo é servir de exemplo para a elaboração de um webservice para comunicar dados em JSON a respeito de uma modelagem. É um webservice RESTful e utiliza autenticação simples por cabeçaho HTTP via Authorization.
 
 ## Modelagem de Referência 
 
@@ -39,6 +39,7 @@ dev@pc:~$ php artisan key:generate
 ```
 4. Verificar se no arquivo bootstrap/app.php:
 - $app->withEloquent(); está descomentado
+- $app->withFacades(); está descomentado
 - $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class); está adicionado
 5. Inserir a configuração de conexão do banco de dados no arquivo .env e criar o respectivo banco no servidor mysql.
 6. Executar as migrations para criar a estrutura de tabelas e os seeds para inserir dados de exemplo:
@@ -76,6 +77,10 @@ dev@pc:~$ php artisan migrate:rollback
 - Gerar uma Model + Controller + Migration em um único comando (cuide para corrigir a nomenclatura de nome de tabela dentro das migrations):
 ```console
 dev@pc:~$ php artisan make:model Jogador -mcr
+```
+- Gerar middlewares:
+```console
+dev@pc:~$ php artisan make:middleware NomeMiddleware
 ```
 
 

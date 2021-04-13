@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 class JogadorController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('apicheck');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

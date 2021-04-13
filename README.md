@@ -17,7 +17,7 @@ Este projeto faz referência a uma modelagem extremamente simplificada da intera
 3. PHP >= 7.3 com as extensões OpenSSL, PDO e Mbstring ativas ([detalhes aqui](https://lumen.laravel.com/docs/8.x/installation#server-requirements)). Verifique na sua configuração:
 - Se Windows + Xampp: C:\xampp\php\php.ini se as extensões estão descomentadas;
 - Se Linux: /etc/php/7.4/apache/php.ini
-4. Para usuários Windows recomenda-se sempre utilizar o [Git Bash for Windows](https://gitforwindows.org/) a fimd e executar comandos similares ao estilo linux das aulas.
+4. Para usuários Windows recomenda-se sempre utilizar o [Git Bash for Windows](https://gitforwindows.org/) a fim de executar comandos similares ao estilo linux das aulas.
 5. Acesso via linha de comando ao PHP. Usuários Windows [acessem aqui](https://ichi.pro/pt/adicionar-xampp-php-a-variaveis-de-ambiente-no-windows-10-192554782273742) para verificar como incluir o executável do PHP caso estiverem com uma instalação XAMPP/WAMP.
 6. Será utilizado o composer como gerenciador de dependências, é possível usá-lo sem instalação (usar direto o composer.phar). De qualquer forma o passo 5 é obrigatório (usuários Windows, [leiam aqui](https://webdevbr.com.br/fazendo-o-php-funcionar-no-console-cmd-do-windows-instalando-o-composer-e-o-git)). 
 

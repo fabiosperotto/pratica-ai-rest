@@ -1,10 +1,22 @@
 # Game-API Pack - Lumen
 
-Pacote de Desenvolvimento para a Disciplina de PPI2, utilizando PHP + microframework Lumen. O Objetivo é servir de exemplo para a elaboração de um webservice para comunicar dados em JSON a respeito de uma modelagem. É um webservice RESTful e utiliza autenticação simples por cabeçaho HTTP via Authorization.
+Pacote de programação para disciplinas de desenvolvimento web back-end, utilizando PHP + microframework [Lumen](https://lumen.laravel.com/). O Objetivo é servir de exemplo para a elaboração de um webservice para comunicar dados em JSON a respeito de uma modelagem. É uma API RESTful e utiliza autenticação simples por cabeçalho HTTP via Authorization.
+
+
+## Compatibilidade
+
+- PHP 7.3 a 8.0;
+- Lumen 8.0 e 10.0;
+- MySQL 8.0;
+
+
+### Docência
+Se você é docente da área, pode entrar em contato para obter slides e dicas sobre o desenvolvimento de aulas com este projeto.
+
 
 ## Modelagem de Referência 
 
-Este projeto faz referência a uma modelagem extremamente simplificada da interação entre um jogador e seus equipamentos (correções e relações many-to-many não serão abordadas até a presente versão).
+Este projeto faz referência a uma modelagem hipotética de um game, da relação entre um jogador e seus equipamentos.
 
 ![Imagem da Modelagem inicial do sistema](/docs/modelagem-inicial.png)
 
@@ -14,9 +26,9 @@ Este projeto faz referência a uma modelagem extremamente simplificada da intera
 - Se Windows: usar [Xampp](https://www.apachefriends.org) ou [Laragon](https://laragon.org/);
 - Se Linux: [Pilha LAMP](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04-pt).
 2. Para acessar o banco de dados, caso não queira manipular o BD via linha de comando, pode utilizar um ou mais softwares clientes, como [MySQL Workbench](https://www.mysql.com/products/workbench/), [PHPMyAdmin](https://www.phpmyadmin.net) ou [DBeaver](https://dbeaver.io/).
-3. PHP >= 7.3 com as extensões OpenSSL, PDO e Mbstring ativas ([detalhes aqui](https://lumen.laravel.com/docs/8.x/installation#server-requirements)). Verifique na sua configuração:
+3. PHP > 7.3 com as extensões OpenSSL, PDO e Mbstring ativas ([detalhes aqui](https://lumen.laravel.com/docs/10.x#server-requirements)). Verifique na sua configuração:
 - Se Windows + Xampp: C:\xampp\php\php.ini se as extensões estão descomentadas;
-- Se Linux: /etc/php/7.4/apache/php.ini
+- Se Linux: /etc/php/X.Y/apache/php.ini onde X.Y é a versão do PHP (8.0 por exemplo).
 4. Para usuários Windows recomenda-se sempre utilizar o [Git Bash for Windows](https://gitforwindows.org/) a fim de executar comandos similares ao estilo linux das aulas.
 5. Acesso via linha de comando ao PHP. Usuários Windows [acessem aqui](https://ichi.pro/pt/adicionar-xampp-php-a-variaveis-de-ambiente-no-windows-10-192554782273742) para verificar como incluir o executável do PHP caso estiverem com uma instalação XAMPP/WAMP.
 6. Será utilizado o composer como gerenciador de dependências, é possível usá-lo sem instalação (usar direto o composer.phar). De qualquer forma o passo 5 é obrigatório (usuários Windows, [leiam aqui](https://webdevbr.com.br/fazendo-o-php-funcionar-no-console-cmd-do-windows-instalando-o-composer-e-o-git)). 
@@ -26,7 +38,7 @@ Este projeto faz referência a uma modelagem extremamente simplificada da intera
 ## Instalação e Configuração
 
 1. Fazer o download/fork/cópia deste repositório.
-2. Instalar via composero projeto:
+2. Instalar via composer o projeto:
 ```console
 dev@pc:~$ php composer.phar install #se usar executável do composer
 ou
@@ -85,9 +97,9 @@ dev@pc:~$ php artisan make:middleware NomeMiddleware
 
 
 ## Documentações
-[Migrations](https://laravel.com/docs/8.x/migrations)
+[Migrations](https://laravel.com/docs/10.x/migrations)
 
-[Eloquent ORM](https://laravel.com/docs/8.x/eloquent)
+[Eloquent ORM](https://laravel.com/docs/10.x/eloquent)
 
 ## Dependências
 
@@ -95,4 +107,8 @@ dev@pc:~$ php artisan make:middleware NomeMiddleware
 
 [Composer](https://getcomposer.org)
 
+
+
+## Contribuindo com o projeto
+Serão aceitas atualizações de pacotes, correções de bug e melhorias didáticas. Novas funcionalidades podem serem debatidas e adicionadas ao projeto se verificado necessidade do desenvolvimento de back-end de um jogo completo.
 

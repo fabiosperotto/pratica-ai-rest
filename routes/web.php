@@ -28,5 +28,5 @@ $router->group(['middleware' => 'apicheck'], function() use ($router) {
     $router->post('/jogador/{id}/equipamento', ['as' => 'jogador.equipamento', 'uses' => 'JogadorController@equipamentoPost']);
 });
 
-//rota para realizar cadastro e receber token de acessoa API:
+//rota para realizar cadastro e receber token de acesso a API:
 $router->post('/authenticate',['as'=> 'autentica.api', 'uses' => 'UsuarioAPIController@store']);

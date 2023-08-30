@@ -2,6 +2,8 @@
 
 Pacote de programação para disciplinas de desenvolvimento web back-end, utilizando PHP + microframework [Lumen](https://lumen.laravel.com/). O Objetivo é servir de exemplo para a elaboração de um webservice para comunicar dados em JSON a respeito de uma modelagem. É uma API RESTful e utiliza autenticação simples por cabeçalho HTTP via Authorization.
 
+Este projeto faz parte de uma série de aprendizado em APIs. Nesta mesma série, você pode acessar o mesmo projeto implementado com [Nodejs e Express](https://github.com/fabiosperotto/api-players-express).
+
 
 ## Compatibilidade
 
